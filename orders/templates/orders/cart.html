@@ -1,0 +1,41 @@
+{% extends 'orders/header.html' %} {% block content %}
+
+<div class="container-fluid">
+    <div class="content my-3 px-2">
+        <div class="card rounded-0 shadow">
+            <div class="card-body">
+                <div class="row justify-content-center">
+                    <h2 id="cart_heading"></h2>
+                    <fieldset class="pb-2 mb-3 border w-100">
+                        <legend class="px-3 w-auto ml-3">Instructions:</legend>
+                        <ul>
+                            <li>Click the Item row to remove item from cart list. </li>
+                            <li>Click checkout button to place order </li>
+                        </ul>
+                    </fieldset>
+                    <table class="table table-bordered table-striped" id="card-tbl">
+                        <thead class="thead-light">
+                            <tr>
+                                <th scope="col" class="text-center">#</th>
+                                <th scope="col" class="text-center">Item Description</th>
+                                <th scope="col" class="text-center">Price</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cart_body">
+                        </tbody>
+                    </table>
+
+
+                    <h2>Total: <span class="badge badge-light border px-5 rounded-pill" id="total"></span></h2>
+                </div>
+
+                <div class="row justify-content-center">
+                    <button id="checkout_button" type="button" class="btn btn-primary btn-block btn-lg rounded-pill" onclick="checkout()">Checkout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

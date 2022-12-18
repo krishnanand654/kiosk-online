@@ -1,0 +1,74 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+#khra {
+  color: pink;
+}
+
+.truncate-3 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  width: calc(100%);
+}
+
+.cat-img {
+  width: 100%;
+  height: 15em;
+  object-fit: cover;
+  object-position: center center;
+}
+
+body {
+  /* background-image: url(./../img/wp.jpg);*/
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  backdrop-filter: brightness(0.9887);
+  
+}
+
+#card-tbl tbody tr:hover {
+  cursor: pointer !important;
+}
+    
+#login-box {
+  width: 100% !important;
+}
+
+.ctn, .row{
+   
+    padding:0;
+    margin:0;
+    
+}
+
+
+
+.banner{
+    background-image: url(./../img/bw.png);
+    object-fit: cover;
+    background-size: cover ;  
+    background-position: 50% ;
+    background-repeat: no-repeat;
+
+
+}
+
+.logo{
+    background-image: url(./../img/logo.png);
+    height: 60px;
+    background-size: 100%;
+    width: 60px;
+
+}
+
+.nav-item, button, .navbar-text a{
+    margin-right: 12px;
+}
+

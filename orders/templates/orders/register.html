@@ -1,0 +1,28 @@
+{% extends 'orders/header.html' %} {% block content %}
+<div class="d-flex align-items-center justify-content-center w-100 h-100 flex-column" id="register-box">
+    <div class="col-lg-8 col-md-10 col-sm-12 col-xs-12">
+        <div class="card card-default rounded-0 shadow">
+            <div class="card-body">
+                <form method="POST" id="">
+                    {% csrf_token %} {% for field in form %}
+                    <div class="form-group">
+                        <div class="control-label">
+                            {{field.label}}
+                        </div>
+                        {{field}} {% if field.help_text %}
+                        <small class="text-muted">{{field.help_text}}</small> {% endif %} {% if field.errors %}
+                        <div class="alert alert-danger rounded-0">{{field.errors}}</div>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                    <button class="btn btn-danger" type="submit">Register</button>
+                </form>
+            </div>
+            <div class="py-1 text-center card-footer">
+                <a href="/login" class=""><b>Already have an Account</b></a>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

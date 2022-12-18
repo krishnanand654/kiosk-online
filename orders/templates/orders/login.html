@@ -1,0 +1,34 @@
+{% extends 'orders/header.html' %} {% block content %}
+
+<div class="d-flex align-items-center justify-content-center w-100 h-100 flex-column" id="login-box">
+    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-lg-offset-4 col-md-offset-4">
+        <div class="card rounded-0 shadow">
+            <div class="card-header py-1">
+                <h4 class="card-title text-center"><b>Login</b></h4>
+            </div>
+            <div class="card-body">
+                <form method="POST">
+                    {% csrf_token %} {% for field in form %}
+                    <div class="form-group">
+                        <div class="control-label">
+                            {{field.label}}
+                        </div>
+                        {{field}} {% if field.help_text %}
+                        <small class="text-muted">{{field.help_text}}</small> {% endif %}
+                    </div>
+                    {% endfor %} {% if error %}
+                    <div class="alert alert-danger rounded-0">{{error}}</div>
+                    {% endif %}
+                    <div class="text-right">
+                        <button class="btn btn-sm btn-primary rounded-0" type="submit">Login</button>
+                    </div>
+                </form>
+            </div>
+            <div class="card-footer py-1 text-center">
+                Don't have an account?
+                <a href="/register"> <br><strong>Register Here</strong></a>!
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

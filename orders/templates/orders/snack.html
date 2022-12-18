@@ -1,0 +1,30 @@
+{% extends 'orders/header.html' %} {% block content %}
+
+
+
+<div class="container">
+    <div class="content my-4 px-4">
+        <div class="card rounded-0 shadow">
+            <div class="card-body">
+                <h4 style="margin:10px; text-align:center;"> Choose one of the Snack 🍪 </h4>
+                <div class="row justify-content-center">
+
+                    {% for dish in dishes %}
+                    <div class="card" id="regular_pizza_card" style="width: 24rem; margin:10px;">
+                        <div class="card-body">
+                            <h5 class="card-title">{{dish.dish_name}}</h5>
+                        </div>
+                        <button class="btn btn-success" onclick="add_to_cart({item_description:'{{dish.dish_name}}' , price:{{dish.small_price}} })"><strong>Small : ₹ {{dish.small_price}}</strong></button>
+                        <br/>    
+                        <button type="button" class="btn btn-success" onclick="add_to_cart({item_description:'Large Sub - {{dish.dish_name}}' , price:{{dish.large_price}}})"><strong>Large : ₹ {{dish.large_price}}</strong></button>
+                    
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
